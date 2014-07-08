@@ -1,8 +1,8 @@
 body {
-    background-color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-.foo {
-    transform: foobar;
-
+.navbar {
+    margin-bottom: 20px;
 }
