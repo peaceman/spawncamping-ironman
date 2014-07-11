@@ -15,6 +15,10 @@ function setActive($route, $class = 'active') {
 	return Route::currentRouteName() === $route ? $class : '';
 }
 
+function setHasError($errors, $fieldName) {
+	return $errors->has($fieldName) ? 'has-error' : '';
+}
+
 App::before(function($request)
 {
 	//
