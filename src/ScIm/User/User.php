@@ -2,7 +2,7 @@
 
 namespace ScIm\User;
 
-use Eloquent;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
