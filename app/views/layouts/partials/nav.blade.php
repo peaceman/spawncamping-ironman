@@ -1,6 +1,6 @@
 <!-- Static navbar -->
-<div class="navbar navbar-default" role="navigation">
-	<div class="container-fluid">
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 				<span class="sr-only">Toggle navigation</span>
@@ -12,7 +12,7 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Link</a></li>
+				<li><a href="#">Link</a></li>
 				<li><a href="#">Link</a></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
@@ -29,8 +29,11 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="/login">Anmelden</a>
+				<li class="{{ setActive('register') }}">
+					<a href="{{{ route('register') }}}">Registrieren</a>
+				</li>
+				<li class="{{ setActive('login') }}">
+					<a href="{{{ route('login') }}}">Anmelden</a>
 				</li>
 			</ul>
 		</div><!--/.nav-collapse -->

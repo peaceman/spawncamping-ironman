@@ -58,7 +58,8 @@ gulp.task('concat-app-js', function() {
 });
 
 gulp.task('concat-app-css', function() {
-	return gulp.src(paths.app.css + '/**/*.css')
+	return gulp.src([paths.app.css + '/**/*.css', paths.app.css + '/**/*.scss'])
+		.pipe(sass())
 		.pipe(sourcemaps.init())
 			.pipe(autoprefix('last 10 version'))
 			.pipe(concat('app.css'))
@@ -107,5 +108,5 @@ gulp.task('build', ['concat', 'fonts']);
 
 gulp.task('watch', function() {
 	gulp.watch(paths.app.js + '/**/*.js', ['concat-js']);
-	gulp.watch(paths.app.css + '/**/*.css', ['concat-css']);
+	gulp.watch([paths.app.css + '/**/*.css', paths.app.css + '/**/*.scss'], ['concat-css']);
 });

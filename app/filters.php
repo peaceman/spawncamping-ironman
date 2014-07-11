@@ -11,6 +11,10 @@
 |
 */
 
+function setActive($route, $class = 'active') {
+	return Route::currentRouteName() === $route ? $class : '';
+}
+
 App::before(function($request)
 {
 	//

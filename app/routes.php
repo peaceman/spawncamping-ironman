@@ -12,3 +12,23 @@
 */
 
 Route::get('/', 'PagesController@home');
+
+Route::group(['before' => ['guest']], function() {
+	Route::get('register', [
+		'as' => 'register',
+		'uses' => 'RegistrationController@create',
+	]);
+
+	Route::post('register', [
+		'as' => 'register',
+		'uses' => 'RegistrationController@store',
+	]);
+
+	Route::get('login', [
+		'as' => 'login',
+		'uses' => 'SessionController@create',
+	]);
+});
+
+Route::when('*', 'csrf', ['post', 'put', 'patch', 'delete']);
+
