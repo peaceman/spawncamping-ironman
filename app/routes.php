@@ -31,6 +31,11 @@ Route::group(['before' => ['guest']], function() {
 		'as' => 'login',
 		'uses' => 'SessionController@create',
 	]);
+
+	Route::post('login', [
+		'as' => 'login',
+		'uses' => 'SessionController@store',
+	]);
 });
 
 Route::when('*', 'csrf', ['post', 'put', 'patch', 'delete']);
