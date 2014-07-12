@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
 	<div class="col-md-6">
-		<h1>Register!</h1>
+		<h1>Registrierung</h1>
 
 		{{ Form::open(['route' => 'register']) }}
 
