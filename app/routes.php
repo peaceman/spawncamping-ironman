@@ -38,5 +38,12 @@ Route::group(['before' => ['guest']], function() {
 	]);
 });
 
+Route::group(['before' => ['auth']], function() {
+	Route::get('logout', [
+		'as' => 'logout',
+		'uses' => 'SessionController@destroy',
+	]);
+});
+
 Route::when('*', 'csrf', ['post', 'put', 'patch', 'delete']);
 

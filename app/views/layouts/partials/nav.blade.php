@@ -29,12 +29,18 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
+				@if (Auth::check())
+				<li>
+					<a href="{{{ route('logout') }}}">Abmelden</a>
+				</li>
+				@else
 				<li class="{{ setActive('register') }}">
 					<a href="{{{ route('register') }}}">Registrieren</a>
 				</li>
 				<li class="{{ setActive('login') }}">
 					<a href="{{{ route('login') }}}">Anmelden</a>
 				</li>
+				@endif
 			</ul>
 		</div><!--/.nav-collapse -->
 	</div><!--/.container-fluid -->

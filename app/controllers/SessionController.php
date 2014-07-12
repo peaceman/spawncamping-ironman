@@ -4,6 +4,7 @@ use Laracasts\Commander\CommandBus;
 use Laracasts\Validation\FormValidationException;
 use ScIm\Forms\LoginForm;
 use ScIm\User\InvalidCredentialsException;
+use ScIm\User\LogOutUserCommand;
 
 class SessionController extends BaseController
 {
@@ -50,5 +51,13 @@ class SessionController extends BaseController
 				->withInput()
 				->withErrors(['credentials' => 'Ungültige Zugangsdaten']);
 		}
+	}
+
+	public function destroy()
+	{
+		$command = new LogOutUserCommand();
+		$this->commandBus->execute($command);
+
+		return Redirect::home();
 	}
 } 
