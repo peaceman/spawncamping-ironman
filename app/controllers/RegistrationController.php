@@ -1,16 +1,14 @@
 <?php
 
 use Laracasts\Commander\CommandBus;
+use Laracasts\Commander\CommanderTrait;
 use Laracasts\Validation\FormValidationException;
 use ScIm\Forms\RegistrationForm;
 use ScIm\User\RegisterUserCommand;
 
 class RegistrationController extends \BaseController
 {
-	/**
-	 * @var CommandBus
-	 */
-	protected $commandBus;
+	use CommanderTrait;
 
 	/**
 	 * @var RegistrationForm
@@ -18,12 +16,10 @@ class RegistrationController extends \BaseController
 	protected $registrationForm;
 
 	/**
-	 * @param CommandBus $commandBus
 	 * @param RegistrationForm $registrationForm
 	 */
-	public function __construct(CommandBus $commandBus, RegistrationForm $registrationForm)
+	public function __construct(RegistrationForm $registrationForm)
 	{
-		$this->commandBus = $commandBus;
 		$this->registrationForm = $registrationForm;
 	}
 
@@ -47,13 +43,7 @@ class RegistrationController extends \BaseController
 		try {
 			$this->registrationForm->validate(Input::all());
 
-			$command = new RegisterUserCommand(
-				Input::get('username'),
-				Input::get('email'),
-				Input::get('password')
-			);
-
-			$this->commandBus->execute($command);
+			$this->execute(RegisterUserCommand::class);
 
 			return Redirect::home();
 		} catch (FormValidationException $e) {

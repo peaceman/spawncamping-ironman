@@ -1,26 +1,23 @@
 <?php
 
-use Laracasts\Commander\CommandBus;
+use Laracasts\Commander\CommanderTrait;
 use Laracasts\Validation\FormValidationException;
 use ScIm\Forms\LoginForm;
 use ScIm\User\InvalidCredentialsException;
+use ScIm\User\LogInUserCommand;
 use ScIm\User\LogOutUserCommand;
 
 class SessionController extends BaseController
 {
-	/**
-	 * @var CommandBus
-	 */
-	protected $commandBus;
+	use CommanderTrait;
 
 	/**
 	 * @var LoginForm
 	 */
 	private $loginForm;
 
-	public function __construct(CommandBus $commandBus, LoginForm $loginForm)
+	public function __construct(LoginForm $loginForm)
 	{
-		$this->commandBus = $commandBus;
 		$this->loginForm = $loginForm;
 	}
 
@@ -34,12 +31,7 @@ class SessionController extends BaseController
 		try {
 			$this->loginForm->validate(Input::all());
 
-			$command = new \ScIm\User\LogInUserCommand(
-				Input::get('username'),
-				Input::get('password')
-			);
-
-			$this->commandBus->execute($command);
+			$this->execute(LogInUserCommand::class);
 
 			return Redirect::home();
 		} catch (FormValidationException $e) {
@@ -55,8 +47,7 @@ class SessionController extends BaseController
 
 	public function destroy()
 	{
-		$command = new LogOutUserCommand();
-		$this->commandBus->execute($command);
+		$this->execute(LogOutUserCommand::class, ['user' => Auth::user()]);
 
 		return Redirect::home();
 	}
