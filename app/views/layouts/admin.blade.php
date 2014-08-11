@@ -5,7 +5,7 @@
     <div class="col-md-2">
         @include('layouts.partials.admin.nav')
     </div>
-    <div class="col-md-9">
+    <div class="col-md-10">
         @yield('content')
     </div>
 </div>
