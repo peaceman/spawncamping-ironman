@@ -58,6 +58,10 @@ Route::group(
 			['prefix' => 'songs'],
 			function() {
 				Route::get('', ['as' => 'admin.songs.index', 'uses' => 'SongsController@index']);
+				Route::get('create', ['as' => 'admin.songs.create', 'uses' => 'SongsController@create']);
+				Route::post('', ['as' => 'admin.songs.store', 'uses' => 'SongsController@store']);
+				Route::get('{songId}/edit', ['as' => 'admin.songs.edit', 'uses' => 'SongsController@edit']);
+				Route::put('{songId}', ['as' => 'admin.songs.update', 'uses' => 'SongsController@update']);
 			}
 		);
 	}
