@@ -16,6 +16,13 @@ Route::get('/', [
 	'uses' => 'PagesController@home'
 ]);
 
+Route::group(
+	['namespace' => 'ScIm\Controllers\Admin', 'prefix' => 'admin'],
+	function() {
+		Route::get('', ['as' => 'admin.home', 'uses' => 'PagesController@home']);
+	}
+);
+
 Route::group(['before' => ['guest']], function() {
 	Route::get('register', [
 		'as' => 'register',

@@ -24,6 +24,9 @@
 		],
 		"psr-0": {
 			"ScIm": "src/"
+		},
+		"psr-4": {
+			"ScIm\\Controllers\\": "app/controllers"
 		}
 	},
 	"scripts": {
