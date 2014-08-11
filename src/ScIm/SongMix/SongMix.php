@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
  * @package ScIm\SongMix
  *
  * @property int $id
+ * @property int $song_id
  * @property string $title
  * @property int $length_in_seconds
  * @property string $filename
