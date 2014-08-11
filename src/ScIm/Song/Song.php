@@ -3,6 +3,9 @@ namespace ScIm\Song;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model as Eloquent;
+use ScIm\Artist\Artist;
+use ScIm\Genre\Genre;
+use ScIm\RecordLabel\RecordLabel;
 
 /**
  * Class Song
@@ -24,4 +27,19 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 class Song extends Eloquent
 {
 	protected $table = 'songs';
+
+	public function artist()
+	{
+		return $this->belongsTo(Artist::class);
+	}
+
+	public function genre()
+	{
+		return $this->belongsTo(Genre::class);
+	}
+
+	public function recordLabel()
+	{
+		return $this->belongsTo(RecordLabel::class);
+	}
 } 

@@ -8,7 +8,7 @@ class SongsController extends \BaseController
 {
 	public function index()
 	{
-		$songs = Song::paginate();
+		$songs = Song::with(['artist', 'genre', 'recordLabel'])->paginate();
 		return View::make('admin.songs.index', compact('songs'));
 	}
 

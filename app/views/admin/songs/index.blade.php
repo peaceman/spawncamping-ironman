@@ -32,9 +32,9 @@
             <tr>
                 <td>{{{ $song->id }}}</td>
                 <td>{{{ $song->title }}}</td>
-                <td>{{{ $song->artist_id }}}</td>
-                <td>{{{ $song->genre_id }}}</td>
-                <td>{{{ $song->record_label_id }}}</td>
+                <td>{{{ $song->artist->name }}}</td>
+                <td>{{{ $song->genre->name }}}</td>
+                <td>{{{ $song->recordLabel->name }}}</td>
                 <td>{{{ $song->promotion_start }}}</td>
                 <td>{{{ $song->promotion_end }}}</td>
                 <td>{{{ $song->updated_at }}}</td>
