@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
  * @property int $id
  * @property int $artist_id
  * @property int $genre_id
+ * @property int $record_label_id
  * @property Carbon $promotion_start
  * @property Carbon $promotion_end
  * @property string $cover_filename
