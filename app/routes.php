@@ -37,6 +37,9 @@ Route::group(
 			function() {
 				Route::get('', ['as' => 'admin.genres.index', 'uses' => 'GenresController@index']);
 				Route::get('create', ['as' => 'admin.genres.create', 'uses' => 'GenresController@create']);
+				Route::post('', ['as' => 'admin.genres.store', 'uses' => 'GenresController@store']);
+				Route::get('{genreId}/edit', ['as' => 'admin.genres.edit', 'uses' => 'GenresController@edit']);
+				Route::put('{genreId}', ['as' => 'admin.genres.update', 'uses' => 'GenresController@update']);
 			}
 		);
 
