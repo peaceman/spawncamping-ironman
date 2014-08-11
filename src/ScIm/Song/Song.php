@@ -21,6 +21,10 @@ use ScIm\RecordLabel\RecordLabel;
  * @property string $title
  * @property string $description
  *
+ * @property Artist $artist
+ * @property Genre $genre
+ * @property RecordLabel $recordLabel
+ *
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
