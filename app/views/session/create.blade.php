@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
 	<div class="col-md-6">
-		<h1>Anmeldung</h1>
+		<h1>@lang('common.login')</h1>
 
 		@if ($errors->has('credentials'))
 		<div class="alert alert-danger" role="alert">{{ $errors->first('credentials') }}</div>
@@ -13,7 +13,7 @@
 
 		<!-- Username Form Input -->
 		<div class="form-group {{ setHasError($errors, 'username') }}">
-			{{ Form::label('username', 'Username', ['class' => 'control-label']) }}
+			{{ Form::label('username', trans('common.username'), ['class' => 'control-label']) }}
 			{{ Form::text('username', null, ['class' => 'form-control']) }}
 			@if ($errors->has('username'))
 			<span class="help-block">{{ $errors->first('username') }}</span>
@@ -22,7 +22,7 @@
 
 		<!-- Password Form Input -->
 		<div class="form-group {{ setHasError($errors, 'password') }}">
-			{{ Form::label('password', 'Password', ['class' => 'control-label']) }}
+			{{ Form::label('password', trans('common.password'), ['class' => 'control-label']) }}
 			{{ Form::password('password', ['class' => 'form-control']) }}
 			@if ($errors->has('password'))
 			<span class="help-block">{{ $errors->first('password') }}</span>
@@ -30,7 +30,7 @@
 		</div>
 
 		<div class="form-group">
-			{{ Form::submit('Anmelden', ['class' => 'btn btn-primary']) }}
+			{{ Form::submit(trans('common.login'), ['class' => 'btn btn-primary']) }}
 		</div>
 
 		{{ Form::close() }}

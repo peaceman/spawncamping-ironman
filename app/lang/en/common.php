@@ -1,12 +1,16 @@
 <?php
 /*************************************************************************
- Generated via "php artisan localization:missing" at 2014/08/11 11:38:41 
+ Generated via "php artisan localization:missing" at 2014/08/11 12:03:51 
 *************************************************************************/
 
 return array (
   //============================== New strings to translate ==============================//
-  // Defined in file /Users/nico/Development/php/spawncamping-ironman/app/views/layouts/partials/nav.blade.php
+  'email' => 'email',
+  'login' => 'login',
   'logout' => 'logout',
-  // Defined in file /Users/nico/Development/php/spawncamping-ironman/app/views/layouts/partials/nav.blade.php
+  'password' => 'password',
+  'password_confirmation' => 'password_confirmation',
   'register' => 'register',
+  'registration' => 'registration',
+  'username' => 'username',
 );
