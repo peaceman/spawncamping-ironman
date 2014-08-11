@@ -18,6 +18,7 @@
             <tr>
                 <th>@lang('common.id')</th>
                 <th>@lang('common.name')</th>
+                <th>@lang('common.amount-of-songs')</th>
                 <th>@lang('common.updated_at')</th>
                 <th></th>
             </tr>
@@ -27,6 +28,7 @@
             <tr>
                 <td>{{{ $artist->id }}}</td>
                 <td>{{{ $artist->name }}}</td>
+                <td>{{{ $artist->songs()->count() }}}</td>
                 <td>{{{ $artist->updated_at }}}</td>
                 <td>
                     <a href="{{{ route('admin.artists.edit', $artist->id) }}}" class="btn btn-default btn-xs" title="@lang('common.edit')">
@@ -36,7 +38,7 @@
             </tr>
             @empty
             <tr>
-                <td colspan="4">@lang('common.no-entries')</td>
+                <td colspan="5">@lang('common.no-entries')</td>
             </tr>
             @endforelse
             </tbody>

@@ -19,6 +19,7 @@
                 <th>@lang('common.id')</th>
                 <th>@lang('common.name')</th>
                 <th>@lang('common.logo_filename')</th>
+                <th>@lang('common.amount-of-songs')</th>
                 <th>@lang('common.updated_at')</th>
                 <th></th>
             </tr>
@@ -29,6 +30,7 @@
                 <td>{{{ $recordLabel->id }}}</td>
                 <td>{{{ $recordLabel->name }}}</td>
                 <td>{{{ $recordLabel->logo_filename }}}</td>
+                <td>{{{ $recordLabel->songs()->count() }}}</td>
                 <td>{{{ $recordLabel->updated_at }}}</td>
                 <td>
                     <a href="{{{ route('admin.record-labels.edit', $recordLabel->id) }}}" class="btn btn-default btn-xs" title="@lang('common.edit')">
