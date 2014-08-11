@@ -46,7 +46,11 @@ Route::group(
 		Route::group(
 			['prefix' => 'record-labels'],
 			function() {
-				Route::get('', ['as' => 'admin.record-labels.index', 'uses' => 'RecordLabelsController@inex']);
+				Route::get('', ['as' => 'admin.record-labels.index', 'uses' => 'RecordLabelsController@index']);
+				Route::get('create', ['as' => 'admin.record-labels.create', 'uses' => 'RecordLabelsController@create']);
+				Route::post('', ['as' => 'admin.record-labels.store', 'uses' => 'RecordLabelsController@store']);
+				Route::get('{recordLabelId}/edit', ['as' => 'admin.record-labels.edit', 'uses' => 'RecordLabelsController@edit']);
+				Route::put('{recordLabelId}', ['as' => 'admin.record-labels.update', 'uses' => 'RecordLabelsController@update']);
 			}
 		);
 
