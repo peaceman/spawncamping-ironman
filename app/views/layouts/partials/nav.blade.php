@@ -31,14 +31,14 @@
 			<ul class="nav navbar-nav navbar-right">
 				@if (Auth::check())
 				<li>
-					<a href="{{{ route('logout') }}}">Abmelden</a>
+					<a href="{{{ route('logout') }}}">@lang('navigation.logout')</a>
 				</li>
 				@else
 				<li class="{{ setActive('register') }}">
-					<a href="{{{ route('register') }}}">Registrieren</a>
+					<a href="{{{ route('register') }}}">@lang('navigation.register')</a>
 				</li>
 				<li class="{{ setActive('login') }}">
-					<a href="{{{ route('login') }}}">Anmelden</a>
+					<a href="{{{ route('login') }}}">@lang('navigation.login')</a>
 				</li>
 				@endif
 			</ul>

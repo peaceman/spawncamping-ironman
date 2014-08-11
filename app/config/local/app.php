@@ -17,6 +17,7 @@ return array(
 
 	'providers' => append_config([
 		'Way\Generators\GeneratorsServiceProvider',
+		'Potsky\LaravelLocalizationHelpers\LaravelLocalizationHelpersServiceProvider',
 	]),
 
 );

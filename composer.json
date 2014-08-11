@@ -6,7 +6,8 @@
 	"require-dev": {
 		"way/generators": "2.*",
 		"laracasts/testdummy": "1.*",
-		"fzaninotto/faker": "1.4.*"
+		"fzaninotto/faker": "1.4.*",
+		"potsky/laravel-localization-helpers": "1.*"
 	},
 	"require": {
 		"laravel/framework": "4.2.*",
