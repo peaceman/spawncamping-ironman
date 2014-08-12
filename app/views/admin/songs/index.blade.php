@@ -23,7 +23,7 @@
                 <th>@lang('common.record-label')</th>
                 <th>@lang('common.promotion-start')</th>
                 <th>@lang('common.promotion-end')</th>
-                <th>@lang('common.updated_at')</th>
+                <th>@lang('common.nr-song-mixes')</th>
                 <th></th>
             </tr>
             </thead>
@@ -37,7 +37,7 @@
                 <td>{{{ $song->recordLabel->name }}}</td>
                 <td>{{{ $song->promotion_start }}}</td>
                 <td>{{{ $song->promotion_end }}}</td>
-                <td>{{{ $song->updated_at }}}</td>
+                <td>{{{ $song->songMixes()->count() }}}</td>
                 <td>
                     <a href="{{{ route('admin.songs.edit', $song->id) }}}" class="btn btn-default btn-xs" title="@lang('common.edit')">
                         <span class="glyphicon glyphicon-pencil"></span>

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 use ScIm\Artist\Artist;
 use ScIm\Genre\Genre;
 use ScIm\RecordLabel\RecordLabel;
+use ScIm\SongMix\SongMix;
 
 /**
  * Class Song
@@ -24,6 +25,7 @@ use ScIm\RecordLabel\RecordLabel;
  * @property Artist $artist
  * @property Genre $genre
  * @property RecordLabel $recordLabel
+ * @property SongMix[] $songMixes
  *
  * @property Carbon $created_at
  * @property Carbon $updated_at
@@ -45,5 +47,10 @@ class Song extends Eloquent
 	public function recordLabel()
 	{
 		return $this->belongsTo(RecordLabel::class);
+	}
+
+	public function songMixes()
+	{
+		return $this->hasMany(SongMix::class);
 	}
 } 

@@ -18,7 +18,7 @@
             <tr>
                 <th>@lang('common.id')</th>
                 <th>@lang('common.name')</th>
-                <th>@lang('common.amount-of-songs')</th>
+                <th>@lang('common.nr-songs')</th>
                 <th>@lang('common.updated_at')</th>
                 <th></th>
             </tr>
