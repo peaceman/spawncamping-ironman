@@ -12,8 +12,8 @@ class ArtistsController extends \BaseController
 		return View::make('admin.artists.index', compact('artists'));
 	}
 
-	public function edit()
+	public function create()
 	{
-
+		return View::make('admin.artists.create');
 	}
 }
