@@ -16,4 +16,9 @@ class ArtistsController extends \BaseController
 	{
 		return View::make('admin.artists.create');
 	}
+
+	public function store()
+	{
+
+	}
 }
